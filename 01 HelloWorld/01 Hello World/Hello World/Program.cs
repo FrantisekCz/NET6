@@ -21,6 +21,7 @@ namespace Hello_World
             Console.WriteLine( "Výsledek příkladu (" + iVstup + " x 2 + 10) je " + Vypocet(iVstup));
 
 
+//            Console.WriteLine(PrevodFtoC(100));
 
         }
         
@@ -29,6 +30,14 @@ namespace Hello_World
         {
             return (iCisloVstup * 2) + 10;
         }
+
+
+
+        static double PrevodFtoC( double dbTeplotaF )
+        {
+            return (dbTeplotaF - 32) / 1.8;
+        }
+
 
         static void Pozdravit(string sJmeno)
         {
@@ -49,6 +58,9 @@ namespace Hello_World
             }
             else sOsloveni = sOsloveni + ", tvoje jméno neumím skloňovat :-(";
             // lze napsat i takto: sOsloveni += pridany_text
+
+
+            
 
             // pěkně pozdravíme
             // string sPozdrav = "Ahoj, ty jsi " + sName;
