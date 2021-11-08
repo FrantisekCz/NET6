@@ -18,10 +18,14 @@ namespace Hello_World
             // kalkulacka
             Console.WriteLine("Zadej mi nějaké celé číslo:");
             int iVstup = int.Parse( Console.ReadLine() );
-            Console.WriteLine( "Výsledek příkladu (" + iVstup + " x 2 + 10) je " + Vypocet(iVstup));
+            Console.WriteLine( "Výsledek příkladu (" + iVstup + " x 2 + 10) je " + Vypocet(iVstup) + "\n");
 
 
-//            Console.WriteLine(PrevodFtoC(100));
+            // prevod teplot
+            Console.WriteLine("Zadej teplotu ve F°:");
+            double dbTeplotaF = double.Parse(Console.ReadLine());
+            Console.WriteLine("Teplota " + dbTeplotaF + "°F odpovídá " + PrevodFtoC(dbTeplotaF) + "°C.");
+    
 
         }
         
