@@ -24,10 +24,12 @@ namespace Hello_World
             {
                 Console.WriteLine("Plnoletost nedosažena");
             }
+            // urcite nad 18
             else if (dbPocetDnuRozdilu > (18 * 365 + 6))
             {
                 Console.WriteLine("SUPER, plnoletost dosažena.");
             }
+            // nejiste vzhledem k prestupnym rokum
             else
             {
                 Console.WriteLine("Nějak si nejsem jistý.");
