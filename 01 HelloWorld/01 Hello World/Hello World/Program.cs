@@ -16,17 +16,33 @@ namespace Hello_World
             */
 
             // kalkulacka
+            /*
             Console.WriteLine("Zadej mi nějaké celé číslo:");
             int iVstup = int.Parse(Console.ReadLine());
             Console.WriteLine("Výsledek příkladu (" + iVstup + " x 2 + 10) je " + Vypocet(iVstup) + ".\n");
-
+            */
 
             // prevod teplot
-            PrevedTiskniFtoC();
+            //PrevedTiskniFtoC();
+
+
+            // CYKLUS WHILE
+            int iCounter = 0;
+            while( iCounter < 10)
+            {
+                Console.WriteLine(iCounter++);
+//                iCounter++;
+            }
+
+
 
         }
 
-        private static void PrevedTiskniFtoC()
+
+        /// <summary>
+        /// Vypočte a vypíše teplotu v °C z teploty v °F
+        /// </summary>
+        static void PrevedTiskniFtoC()
         {
             Console.WriteLine("Zadej teplotu ve F°:");
             double dbTeplotaF = double.Parse(Console.ReadLine());
