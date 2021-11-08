@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Hello_World
 {
@@ -27,22 +28,49 @@ namespace Hello_World
 
 
             // CYKLUS WHILE
+            /*
             int iCounter = 0;
             while( iCounter < 10)
             {
                 Console.WriteLine(iCounter++);
 //                iCounter++;
             }
+            */
 
-
-
+            
             string sVstup = "";
-            while( sVstup != "x")
+            while(sVstup != "x")
             {
-                sVstup = PrevadejFtoCneboSkonci();
+                sVstup = PrevadejFtoCVyjimky();
             }
 
         }
+
+
+
+
+
+        static string PrevadejFtoCVyjimky()
+        {
+            double dbTeplotaF = 0;
+            Console.WriteLine("Zadejte teplotu v °F nebo zadejte \"x\" pro ukončení:");
+            string sHodnota = Console.ReadLine();
+
+            try
+            {
+                dbTeplotaF = double.Parse(sHodnota);
+                Console.WriteLine($"Teplota {dbTeplotaF}°F odpovídá {PrevodFtoC(dbTeplotaF)}°C.\n");
+            }
+            catch(Exception exVyjimka)
+            {
+                //NewLine zajistuje, ze to bude na vsech systemech spravne
+                File.AppendAllText( "errorlog.txt", exVyjimka.Message + Environment.NewLine);
+            }
+
+            return sHodnota;
+
+        }
+
 
 
 
@@ -52,7 +80,7 @@ namespace Hello_World
             Console.WriteLine("Zadejte teplotu v °F nebo zadejte \"x\" pro ukončení:");
             string sHodnota = Console.ReadLine();
 
-            // pokud je x, pak vraci ahodnotu a vypadne
+            // pokud je x, pak vraci hodnotu a vypadne
             if (sHodnota == "x")
             {
                 return sHodnota;
