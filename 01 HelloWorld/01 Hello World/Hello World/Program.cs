@@ -13,8 +13,17 @@ namespace Hello_World
             string sJmeno = Console.ReadLine();
 
             Pozdravit(sJmeno);
-        }
 
+            int iVstup = 5;
+            int iVysledek = Vypocet(iVstup);
+            Console.WriteLine( "Výsledek příkladu (" + iVstup + " x 2 + 10) je " + iVysledek);
+        }
+        
+
+        static int Vypocet( int iCisloVstup )
+        {
+            return (iCisloVstup * 2) + 10;
+        }
 
         static void Pozdravit(string sJmeno)
         {
