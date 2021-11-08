@@ -6,17 +6,22 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
- 
+
+            /*
             Console.WriteLine("Hello World!");
             Console.WriteLine("Jak se jmenuješ?");
             // necháme si předat od uživatele jméno
             string sJmeno = Console.ReadLine();
-
             Pozdravit(sJmeno);
+            */
 
-            int iVstup = 5;
-            int iVysledek = Vypocet(iVstup);
-            Console.WriteLine( "Výsledek příkladu (" + iVstup + " x 2 + 10) je " + iVysledek);
+            // kalkulacka
+            Console.WriteLine("Zadej mi nějaké celé číslo:");
+            int iVstup = int.Parse( Console.ReadLine() );
+            Console.WriteLine( "Výsledek příkladu (" + iVstup + " x 2 + 10) je " + Vypocet(iVstup));
+
+
+
         }
         
 
