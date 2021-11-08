@@ -36,6 +36,34 @@ namespace Hello_World
 
 
 
+            string sVstup = "";
+            while( sVstup != "x")
+            {
+                sVstup = PrevadejFtoCneboSkonci();
+            }
+
+        }
+
+
+
+        static string PrevadejFtoCneboSkonci()
+        {
+            double dbTeplotaF = 0;
+            Console.WriteLine("Zadejte teplotu v °F nebo zadejte \"x\" pro ukončení:");
+            string sHodnota = Console.ReadLine();
+
+            // pokud je x, pak vraci ahodnotu a vypadne
+            if (sHodnota == "x")
+            {
+                return sHodnota;
+            }
+            else
+            {
+                // toto probehne jen pokud neni "x"
+                dbTeplotaF = double.Parse(sHodnota);
+                Console.WriteLine($"Teplota {dbTeplotaF}°F odpovídá {PrevodFtoC(dbTeplotaF)}°C.\n");
+                return sHodnota;
+            }
         }
 
 
@@ -46,7 +74,6 @@ namespace Hello_World
         {
             Console.WriteLine("Zadej teplotu ve F°:");
             double dbTeplotaF = double.Parse(Console.ReadLine());
-            //Console.WriteLine("Teplota " + dbTeplotaF + "°F odpovídá " + PrevodFtoC(dbTeplotaF) + "°C.\n");
             Console.WriteLine($"Teplota {dbTeplotaF}°F odpovídá {PrevodFtoC(dbTeplotaF)}°C.\n");
         }
 
