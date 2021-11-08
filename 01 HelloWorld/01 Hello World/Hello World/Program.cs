@@ -7,25 +7,18 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            while( ZjistiZapisJmenoVek() )
+
+            while (true)
             {
-                // vykonavej dokud nevratim false
-            };
+                Console.WriteLine(Environment.NewLine + "Zadejte své jméno (x pro konec):");
+                string sJmeno = Console.ReadLine();
+                if (sJmeno == "x") return;  // nasilne ukonci program; = halt
+                Console.WriteLine("Zadejte svůj věk:");
+                string sVek = Console.ReadLine();
 
-
+                File.AppendAllText("jmena.txt", ($"{sJmeno};{sVek}" + Environment.NewLine));
+            }
         }
 
-        static bool ZjistiZapisJmenoVek()
-        {
-            Console.WriteLine(Environment.NewLine + "Zadejte své jméno (x pro konec):");
-            string sJmeno = Console.ReadLine();
-            if (sJmeno == "x") return false;
-            Console.WriteLine("Zadejte svůj věk:");
-            string sVek = Console.ReadLine();
-
-            File.AppendAllText("jmena.txt", ($"{sJmeno};{sVek}" + Environment.NewLine));
-            return true;
-            
-        }
     }
 }
