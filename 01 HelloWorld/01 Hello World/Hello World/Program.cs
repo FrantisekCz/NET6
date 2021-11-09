@@ -3,57 +3,97 @@ using System.IO;
 
 namespace Hello_World
 {
+
+
     class Program
     {
         static void Main(string[] args)
         {
+            // vypocet veku dle data narozeni
+            /*
+            Console.WriteLine("Zadejte datum narození:");
+            DateTime dtDatumNarozeni = DateTime.Parse(Console.ReadLine());
+            Console.WriteLine($"Váš věk je: {VratVek(dtDatumNarozeni)}.");
+            */
 
-            UrcitPlnoletostUzivatele();
+
+
+            // ziskani dvou cisel a vypis toho vetsiho
+//            Console.WriteLine("Zadejte dvě celá čísla:");
+
+
+
+            // vypis nejstarsiho
+            VypisNejstarsihoZeSouboruJmena();
+
 
         }
 
 
-        static void UrcitPlnoletostUzivatele()
+        static int VratVek( DateTime dtDatumNarozeni )
         {
-            Console.WriteLine("Zadej datum narození (YYYY-MM-DD):");
-            DateTime dDatumNarozeni = DateTime.Parse(Console.ReadLine());
-            TimeSpan tsRozdilNarozeniNow = DateTime.Now - dDatumNarozeni;
-            double dbPocetDnuRozdilu = tsRozdilNarozeniNow.TotalDays;
-            // urcite pod 18
-            if(dbPocetDnuRozdilu < (18*365 + 3) )
-            {
-                Console.WriteLine("Plnoletost nedosažena");
-            }
-            // urcite nad 18
-            else if (dbPocetDnuRozdilu > (18 * 365 + 6))
-            {
-                Console.WriteLine("SUPER, plnoletost dosažena.");
-            }
-            // nejiste vzhledem k prestupnym rokum
-            else
-            {
-                Console.WriteLine("Nějak si nejsem jistý.");
-            }
-
+            TimeSpan dRozdil = DateTime.Now - dtDatumNarozeni;
+            return (int)(dRozdil.TotalDays / 365.25);
         }
 
 
-        static void PraceSDatemCasem()
+
+        static int VratVetsiCislo( int iPrvniCislo, int iDruheCislo )
         {
-            // PRÁCE S DATEM A ČASEM
-            // vytváří se nová instance objektu. Podle počtu parametrů se to chová.
-            DateTime dDatum = new DateTime(2021, 11, 8);
-            DateTime dtDatumCas = new DateTime(2021, 11, 8, 16, 11, 00);
+            // pomoci metody Math.Max()
+            //            return Math.Max(iPrvniCislo, iDruheCislo);
 
-            //statické metody
-            DateTime dtNyni = DateTime.Now;
-
-            // instanční metody
-            DateTime dDatumZa14Dni = dDatum.AddDays(14);
-            int iDatumRok = dDatum.Year;
-            string sKratkeDatum = dDatum.ToShortDateString();
-
-            TimeSpan dtRozdilDateTime = dtNyni - dtDatumCas;
+            // ternarni operator
+            return (iPrvniCislo > iDruheCislo) ? iPrvniCislo : iDruheCislo;
         }
+
+
+
+        // verze 1 - case sensitive
+        static bool VratJestliOva( string sPrijmeni )
+        {
+            return (sPrijmeni.EndsWith("ová"));
+        }
+
+        // verze 2 - case insensitive
+        static bool VratJestliOva(string sPrijmeni, bool bIgnoreCase )
+        {
+            return (sPrijmeni.EndsWith("ová", StringComparison.OrdinalIgnoreCase));
+        }
+
+
+
+        static void VypisNejstarsihoZeSouboruJmena()
+        {
+
+            string sJmeno;
+            string sVek;
+            int iVek;
+            int iNejvyssiVek = 0;
+            string sNejvyssiJmeno = "";
+
+            foreach (var sRadek in File.ReadLines("jmena.txt") )
+            {
+                // rozsekneme radek do jednotlivych hodnot
+                string[] psCastiRadku = sRadek.Split(';');
+                sJmeno = psCastiRadku[0];
+                sVek =  psCastiRadku[1];
+                // prevedeme si vek na cislo
+                iVek = int.Parse(sVek);
+                // porovname s ulozenou hodnotou, pripadne ulozim
+                if( iVek > iNejvyssiVek )
+                {
+                    iNejvyssiVek = iVek;
+                    sNejvyssiJmeno = sJmeno;
+                }
+            }
+
+            Console.WriteLine($"Mejstarší je {sNejvyssiJmeno}, věk je {iNejvyssiVek}.");
+        }
+
+
     }
-}
+
+
+
+    }
