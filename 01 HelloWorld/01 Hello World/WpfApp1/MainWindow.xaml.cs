@@ -27,8 +27,29 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            txbInfo.Text = "HA, klikl jsi na tlačítko!";
-            btnKlikni.Content = "Paráda, viď?";
+            if (txtVstupni.Text.Trim() == "")
+            {
+                txbInfo.Text = "HA, klikl jsi na tlačítko!";
+                btnKlikni.Content = "Paráda, viď?";
+
+                Color c = new Color();
+                c.R = 10;
+                c.G = 10;
+                c.B = 10;
+                c.A = 100;
+                wMain.Background = new SolidColorBrush(c);
+            }
+
+            else
+            {
+                txbInfo.Text = "Jé, tys mi zadal nějakou hodnotu!" + Environment.NewLine + "Tak já pojmenuju tlačítko.";
+                btnKlikni.Content = txtVstupni.Text.Trim();
+                lsvSeznam.Items.Add(txtVstupni.Text.Trim());
+                txtVstupni.Text = "";
+                txtVstupni.Focus();
+
+            }
+
         }
     }
 }

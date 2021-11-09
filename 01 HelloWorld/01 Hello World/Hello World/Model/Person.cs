@@ -44,6 +44,7 @@ namespace Hello_World.Model
         public DateTime DatumNarozeni { get; set; }
 
         public Address AdresaDomov { get; set; } = new Address();
+        public List<Auto> OsobniAuta { get; set; } = new List<Auto>();
 
 
 
