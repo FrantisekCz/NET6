@@ -26,6 +26,15 @@ namespace Hello_World
         }
 
 
+        static void Fakturace()
+        {
+            Invoice f1 = new Invoice();
+            f1.Zakaznik = "Pekárna Šáteček";
+            f1.Predmet = "houstičky řádně vypečené";
+            f1.Castka = 123.40;
+        }
+
+
         static void StarsiOsoba()
         {
             Person osoba1 = new Person();
