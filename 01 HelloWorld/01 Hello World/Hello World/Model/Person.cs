@@ -54,6 +54,5 @@ namespace Hello_World.Model
             return (int)(dRozdil.TotalDays / 365.25);
         }
 
-
     }
 }

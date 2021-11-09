@@ -1,4 +1,5 @@
-﻿using Hello_World.Model;
+﻿using Hello_World.Data;
+using Hello_World.Model;
 using System;
 using System.IO;
 
@@ -14,13 +15,25 @@ namespace Hello_World
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-
+            /*
             var p1 = new Person("Martin", "Slonisko", "15.8.1983");
-            //            p1.AdresaDomov = new Address("Hranice", "Polní 123");
-            //                p1.AdresaDomov.Ulice = "Polní 215";
-            //                p1.AdresaDomov.Mesto = "Hranice";
             p1.AdresaDomov.Mesto = "Hranice";
-            p1.AdresaDomov.Mesto = "Polní 1235";
+            p1.AdresaDomov.Ulice = "Horní 1235";
+            PersonData.SavePerson(p1);
+            */
+
+            PersonData.CreateSavePerson("Alžběta", "První", "1.1.2001", "Horní 25", "Pardubice");
+            PersonData.CreateSavePerson("Bartoloměj", "Soukal", "2.2.2002", "Dolní 25", "Pardubice");
+            PersonData.CreateSavePerson("Cilka", "Hrubá", "3.4.2003", "Zadní 48", "Zlín");
+            PersonData.CreateSavePerson("Dalibor", "Smutný", "5.7.2004", "Přední 54/1", "Pardubice");
+            PersonData.CreateSavePerson("Emil", "Zátopek", "15.9.2005", "Konečná 4074", "Pardubice");
+            PersonData.CreateSavePerson("Filip", "Konečný", "1.11.2006", "Slepá 26", "Pardubice");
+            PersonData.CreateSavePerson("Gustav", "Brom", "1.4.2007", "Hraniční 485", "Pardubice");
+            PersonData.CreateSavePerson("Hana", "Hýsková", "1.6.2008", "Ochozy 2415", "Pardubice");
+            PersonData.CreateSavePerson("Iva", "Polední", "1.2.2009", "Křivá 252", "Pardubice");
+            PersonData.CreateSavePerson("Jitka", "Pravá", "1.12.2010", "Rovná 12", "Pardubice");
+            
+
 
 
             /*
