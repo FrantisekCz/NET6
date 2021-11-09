@@ -24,5 +24,11 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            txbInfo.Text = "HA, klikl jsi na tlačítko!";
+            btnKlikni.Content = "Paráda, viď?";
+        }
     }
 }
