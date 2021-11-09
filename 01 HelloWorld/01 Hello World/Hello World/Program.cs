@@ -23,15 +23,15 @@ namespace Hello_World
             */
 
             PersonData.CreateSavePerson("Alžběta", "První", "1.1.2001", "Horní 25", "Pardubice");
-            PersonData.CreateSavePerson("Bartoloměj", "Soukal", "2.2.2002", "Dolní 25", "Pardubice");
+            PersonData.CreateSavePerson("Bartoloměj", "Soukal", "2.2.2002", "Dolní 25", "Brno");
             PersonData.CreateSavePerson("Cilka", "Hrubá", "3.4.2003", "Zadní 48", "Zlín");
-            PersonData.CreateSavePerson("Dalibor", "Smutný", "5.7.2004", "Přední 54/1", "Pardubice");
-            PersonData.CreateSavePerson("Emil", "Zátopek", "15.9.2005", "Konečná 4074", "Pardubice");
-            PersonData.CreateSavePerson("Filip", "Konečný", "1.11.2006", "Slepá 26", "Pardubice");
-            PersonData.CreateSavePerson("Gustav", "Brom", "1.4.2007", "Hraniční 485", "Pardubice");
-            PersonData.CreateSavePerson("Hana", "Hýsková", "1.6.2008", "Ochozy 2415", "Pardubice");
-            PersonData.CreateSavePerson("Iva", "Polední", "1.2.2009", "Křivá 252", "Pardubice");
-            PersonData.CreateSavePerson("Jitka", "Pravá", "1.12.2010", "Rovná 12", "Pardubice");
+            PersonData.CreateSavePerson("Dalibor", "Smutný", "5.7.2004", "Přední 54/1", "Choceň");
+            PersonData.CreateSavePerson("Emil", "Zátopek", "15.9.2005", "Konečná 4074", "Hradec Králové");
+            PersonData.CreateSavePerson("Filip", "Konečný", "1.11.2006", "Slepá 26", "Aš");
+            PersonData.CreateSavePerson("Gustav", "Brom", "1.4.2007", "Hraniční 485", "Liberec");
+            PersonData.CreateSavePerson("Hana", "Hýsková", "1.6.2008", "Ochozy 2415", "Třebíč");
+            PersonData.CreateSavePerson("Iva", "Polední", "1.2.2009", "Křivá 252", "Holice");
+            PersonData.CreateSavePerson("Jitka", "Pravá", "1.12.2010", "Rovná 12", "Mnichovice");
             
 
 
