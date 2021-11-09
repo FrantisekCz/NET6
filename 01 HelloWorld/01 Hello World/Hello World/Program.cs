@@ -15,9 +15,19 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
+            var p1 = new Person("Martin", "Slonisko", "15.8.1983");
+            //            p1.AdresaDomov = new Address("Hranice", "Polní 123");
+            //                p1.AdresaDomov.Ulice = "Polní 215";
+            //                p1.AdresaDomov.Mesto = "Hranice";
+            p1.AdresaDomov.Mesto = "Hranice";
+            p1.AdresaDomov.Mesto = "Polní 1235";
+
+
+            /*
+            // AUTO
             Auto a1 = new Auto("ABC 1234", "žlutá", 1234.5);
             Console.WriteLine(a1.ToString());
-
+            */
         }
 
 

@@ -14,18 +14,20 @@ namespace Hello_World.Model
             this.KrestniJmeno = sJmeno.Trim();
             this.Prijmeni = sPrijmeni.Trim();
             this.DatumNarozeni = DateTime.Parse(sDatumNarozeni);
+            this.AdresaDomov = new Address();
         }
 
         public Person( string sJmeno, string sPrijmeni)
         {
             this.KrestniJmeno = sJmeno;
             this.Prijmeni = sPrijmeni;
+            this.AdresaDomov = new Address();
         }
 
         public Person()
         {
+            this.AdresaDomov = new Address();
         }
-
 
 
         // přetížení standardní metody
@@ -41,7 +43,11 @@ namespace Hello_World.Model
 
         public DateTime DatumNarozeni { get; set; }
 
+        public Address AdresaDomov { get; set; } = new Address();
 
+
+
+        // METODY
         public int VratVek()
         {
             TimeSpan dRozdil = DateTime.Now - DatumNarozeni;
