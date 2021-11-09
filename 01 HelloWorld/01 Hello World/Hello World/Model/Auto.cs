@@ -12,6 +12,25 @@ namespace Hello_World.Model
         public string Barva { set; get; }
         public double NajeteKilometry { set; get; }
 
+
+        // konstruktory
+        public Auto(string sRegistracniZnacka, string sBarva, double dbKilometry)
+        {
+            this.RegistracniZnacka = sRegistracniZnacka;
+            this.Barva = sBarva;
+            this.NajeteKilometry = dbKilometry;
+        }
+        public Auto()
+        {
+        }
+
+
+        public override string ToString()
+        {
+            return $"RZ: {this.RegistracniZnacka}, barva {this.Barva}, najeto {this.NajeteKilometry} km";
+        }
+
+
         public void PridejNajeteKilometry( double dbKM )
         {
             NajeteKilometry += dbKM;

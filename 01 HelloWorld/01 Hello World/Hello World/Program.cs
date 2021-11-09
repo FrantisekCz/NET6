@@ -10,9 +10,9 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            // StarsiOsoba();
 
-
+            Auto a1 = new Auto("ABC 1234", "žlutá", 1234.5);
+            Console.WriteLine(a1.ToString());
 
         }
 
@@ -35,7 +35,7 @@ namespace Hello_World
         }
 
 
-        static void StarsiOsoba()
+        static void Osoby()
         {
             Person osoba1 = new Person();
             osoba1.KrestniJmeno = "Jana";
@@ -48,6 +48,12 @@ namespace Hello_World
             osoba2.Prijmeni = "Kopýtko";
             osoba2.DatumNarozeni = new DateTime(2002, 3, 28);
             int iVekOsoba2 = osoba2.VratVek();
+
+            Person osoba3 = new Person("Soňa", "Hvězdná");
+            osoba3.DatumNarozeni = new DateTime(1995, 2, 17);
+
+            Person osoba4 = new Person("Petr", "Vomáčka", "2011-08-16");
+
 
             // výpis starší osoby
             //- 1)
