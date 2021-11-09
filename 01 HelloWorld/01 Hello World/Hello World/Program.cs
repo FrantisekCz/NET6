@@ -1,6 +1,7 @@
 ﻿using Hello_World.Data;
 using Hello_World.Model;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Hello_World
@@ -22,6 +23,8 @@ namespace Hello_World
             PersonData.SavePerson(p1);
             */
 
+            /*
+            // ZAPSAT 10 LIDI
             PersonData.CreateSavePerson("Alžběta", "První", "1.1.2001", "Horní 25", "Pardubice");
             PersonData.CreateSavePerson("Bartoloměj", "Soukal", "2.2.2002", "Dolní 25", "Brno");
             PersonData.CreateSavePerson("Cilka", "Hrubá", "3.4.2003", "Zadní 48", "Zlín");
@@ -32,8 +35,11 @@ namespace Hello_World
             PersonData.CreateSavePerson("Hana", "Hýsková", "1.6.2008", "Ochozy 2415", "Třebíč");
             PersonData.CreateSavePerson("Iva", "Polední", "1.2.2009", "Křivá 252", "Holice");
             PersonData.CreateSavePerson("Jitka", "Pravá", "1.12.2010", "Rovná 12", "Mnichovice");
-            
+            */
 
+
+            var seznamLidi = PersonData.LoadPeople();
+            Console.WriteLine( $"Počet načtených lidí: {seznamLidi.Count}");
 
 
             /*

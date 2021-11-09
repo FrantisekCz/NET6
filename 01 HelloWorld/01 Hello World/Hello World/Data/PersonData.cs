@@ -33,5 +33,34 @@ namespace Hello_World.Data
         }
 
 
+
+        // nacteni seznamu osob - KOLEKCE
+        public static List<Person> LoadPeople()
+        {
+            // seznam lidi; seznam polozek typu Person
+            var seznamLidi = new List<Person>();
+            // data ze souboru; pole stringu
+            var radkySouboru = File.ReadAllLines(personDataFile);
+            // prochazim pole s nactenymi texty
+            foreach( var jedenRadek in radkySouboru )
+            {
+                // rozparsuji si radek do pole
+                var dataRadku = jedenRadek.Split(';');
+                // pripravim si objekt Person
+                var osoba = new Person();
+                osoba.KrestniJmeno      = dataRadku[0];
+                osoba.Prijmeni          = dataRadku[1];
+                osoba.DatumNarozeni     = DateTime.Parse( dataRadku[2] );
+                osoba.AdresaDomov.Mesto = dataRadku[3];
+                osoba.AdresaDomov.Ulice = dataRadku[4];
+                // ulozim osobu do seznamu; Add je vestavena metoda
+                seznamLidi.Add(osoba);
+            }
+
+            return seznamLidi;
+        }
+        
+
+
     }
 }
