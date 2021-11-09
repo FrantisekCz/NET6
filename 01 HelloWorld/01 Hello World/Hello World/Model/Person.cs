@@ -11,8 +11,8 @@ namespace Hello_World.Model
         // konstruktory
         public Person(string sJmeno, string sPrijmeni, string sDatumNarozeni)
         {
-            this.KrestniJmeno = sJmeno;
-            this.Prijmeni = sPrijmeni;
+            this.KrestniJmeno = sJmeno.Trim();
+            this.Prijmeni = sPrijmeni.Trim();
             this.DatumNarozeni = DateTime.Parse(sDatumNarozeni);
         }
 

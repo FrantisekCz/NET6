@@ -8,6 +8,10 @@ namespace Hello_World
 
     class Program
     {
+        /// <summary>
+        /// MAIN
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
 
@@ -15,6 +19,8 @@ namespace Hello_World
             Console.WriteLine(a1.ToString());
 
         }
+
+
 
 
         static void EvidenceAut()
@@ -61,9 +67,8 @@ namespace Hello_World
             //- 2)
             Person Nejstarsi = (osoba1.VratVek() > osoba2.VratVek()) ? osoba1 : osoba2;
             Console.WriteLine($"Starší je {Nejstarsi.KrestniJmeno} {Nejstarsi.Prijmeni}");
-
         }
 
-    }
+    } // class
 
 }
