@@ -10,8 +10,19 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            StarsiOsoba();
+            // StarsiOsoba();
 
+
+
+        }
+
+
+        static void EvidenceAut()
+        {
+            Auto a1 = new Auto();
+            a1.RegistracniZnacka = "ACC 5640";
+            a1.Barva = "zelená";
+            a1.NajeteKilometry = 123456;
         }
 
 

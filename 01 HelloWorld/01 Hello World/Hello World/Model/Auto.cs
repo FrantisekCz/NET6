@@ -8,8 +8,18 @@ namespace Hello_World.Model
 {
     class Auto
     {
-        public string Znacka { set; get; }
+        public string RegistracniZnacka { set;  get; }
         public string Barva { set; get; }
-        public int NajeteKilometry { set; get; }
+        public double NajeteKilometry { set; get; }
+
+        public void PridejNajeteKilometry( double dbKM )
+        {
+            NajeteKilometry += dbKM;
+        }
+        public void VynulujNajeteKilometry()
+        {
+            NajeteKilometry = 0;
+        }
+
     }
 }
