@@ -19,12 +19,16 @@ namespace Hello_World
             var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
             /// vypis cisla jako slova
-            var vysledek = numbers.Select( n => strings[n]);
-            Console.WriteLine(String.Join(", ", vysledek));
+            var vysledek1 = numbers.Select( n => strings[n]);
+            Console.WriteLine(String.Join(", ", vysledek1));
 
             /// pomoci select vse upperCase
             var vysledek2 = strings.Select( s => s.ToUpper() );
             Console.WriteLine(String.Join(", ", vysledek2));
+
+            /// pomoci selectu vytvorit nove pole obsahujici dvojici lower/upper variantu
+            var vysledek3 = strings.Select(s => ($"{s} {s.ToUpper()}"));
+            Console.WriteLine(String.Join(", ", vysledek3));
 
 
         }
