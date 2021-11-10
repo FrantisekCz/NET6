@@ -3,6 +3,7 @@ using Hello_World.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Hello_World
 {
@@ -13,10 +14,30 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
+            int[] aCisla = { 1, 2, -30, 4, 20, 256, -45, 99 };
+
+            // where - filtruje v kolekci a vytváří novou kolekci
+            //- AND pomocí &&
+            // var eVycet = aCisla.Where(iCislo => ( (iCislo >= 0) && (iCislo <= 100)));
+            //- AND více podmínek, následný filtr; následné opakované volání
+            var eVycet = aCisla
+                            .Where(iCislo => (iCislo >= 0))
+                            .Where(iCislo => (iCislo <= 100));
+
+            foreach ( var hodnota in eVycet)
+            {
+                Console.WriteLine(hodnota);
+            }
+
+        }
+
+
+
+        public static void Day03() {
             /*
             var p1 = new Point2D( 2, 4);
             Console.WriteLine($"Definice bodu A: {p1}"); ; ;
-            
+
             var p2 = new Point2D( 3, 7);
             Console.WriteLine($"Definice bodu B: {p2}"); ; ;
 
@@ -43,12 +64,11 @@ namespace Hello_World
 
             Console.WriteLine( $"Pomocí List: {DateOperations.VratCisloDneDleNazvuList("ČtvrtEk")}");
 
-        }
+
+            }
 
 
 
-
-
-    } // class
+} // class
 
 }
