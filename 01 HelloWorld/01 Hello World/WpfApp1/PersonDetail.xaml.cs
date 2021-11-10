@@ -1,6 +1,7 @@
 ﻿using Hello_World.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,8 +42,9 @@ namespace WpfApp1
             osoba.KrestniJmeno = txtFirstName.Text;
             osoba.Prijmeni = txtLastName.Text;
             osoba.DatumNarozeni = DateTime.Parse(txtBirthDate.Text);
-            
+
             // z objektu do dat
+            File.AppendAllText("osobyWPF.txt", osoba.ToString() + Environment.NewLine);
         }
     }
 }
