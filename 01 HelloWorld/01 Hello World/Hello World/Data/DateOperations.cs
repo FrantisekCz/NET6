@@ -9,6 +9,27 @@ namespace Hello_World.Data
     class DateOperations
     {
 
+        private static string[] aDny = new[] {
+                                        "pondělí",
+                                        "úterý",
+                                        "středa",
+                                        "čtvrtek",
+                                        "pátek",
+                                        "sobota",
+                                        "neděle"
+                                    };
+
+
+        private static List<string> lDny = new List<string> {
+                                        "pondělí",
+                                        "úterý",
+                                        "středa",
+                                        "čtvrtek",
+                                        "pátek",
+                                        "sobota",
+                                        "neděle"
+                                    };
+
         public static string VratNazevDneDleCislaSwitch( int iCisloDne )
         {
             switch (iCisloDne)
@@ -77,15 +98,7 @@ namespace Hello_World.Data
 
         public static string VratNazevDneDleCislaArray(int iCislo)
         {
-            var aDny = new[] {
-                "pondělí",
-                "úterý",
-                "středa",
-                "čtvrtek",
-                "pátek",
-                "sobota",
-                "neděle"
-            };
+            
 
             // zkusim vratit hodnotu
             try
@@ -103,15 +116,6 @@ namespace Hello_World.Data
 
         public static string VratNazevDneDleCislaList(int iCislo)
         {
-            var lDny = new List<string> { 
-                "pondělí",
-                "úterý",
-                "středa",
-                "čtvrtek",
-                "pátek",
-                "sobota",
-                "neděle"
-            };
 
             // zkusim vratit hodnotu
             try
@@ -149,7 +153,7 @@ namespace Hello_World.Data
 
 
 
-        public static int VratCisloDneDleNazvu( string sNazevDne)
+        public static int VratCisloDneDleNazvuSwitch( string sNazevDne)
         {
             switch( sNazevDne.ToLower())
             {
@@ -173,6 +177,21 @@ namespace Hello_World.Data
         }
 
 
+        public static int VratCisloDneDleNazvuArray(string sNazevDne)
+        {
+            for (int iCnt = 0; iCnt < aDny.Count(); iCnt++)
+            {
+                if (sNazevDne.ToLower() == aDny[iCnt]) return iCnt + 1;
+
+            }
+            // default
+            return -1;
+        }
+
+        public static int VratCisloDneDleNazvuList(string sNazevDne)
+        {
+            return lDny.IndexOf( sNazevDne.ToLower() )+1;
+        }
 
     }
 }
