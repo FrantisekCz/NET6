@@ -19,7 +19,7 @@ namespace Hello_World
             var p2 = new Point2D( 3, 7);
             Console.WriteLine(p2.ToString());
 
-            var pSoucet = Point2D.VratPointSoucetBodu(p1, p2);
+            var pSoucet = PointMath.VratPointSoucetBodu(p1, p2);
             Console.WriteLine(pSoucet.ToString());
 
         }

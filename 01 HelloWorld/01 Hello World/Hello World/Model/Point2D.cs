@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hello_World.Data
+namespace Hello_World.Model
 {
     class Point2D
     {
         public int iBodX { get; }
         public int iBodY { get; }
 
-        public Point2D( int bodX, int bodY)
+        public Point2D(int bodX, int bodY)
         {
             this.iBodX = bodX;
             this.iBodY = bodY;
         }
 
-       
-        int VratPlochu()
+
+        public int VratPlochu()
         {
             return (Math.Abs(iBodX) * Math.Abs(iBodY));
         }
@@ -30,12 +30,7 @@ namespace Hello_World.Data
         }
 
 
-        public static Point2D VratPointSoucetBodu( Point2D Bod1, Point2D Bod2)
-        {
-            int OsaX = Bod1.iBodX + Bod2.iBodX;
-            int OsaY = Bod1.iBodY + Bod2.iBodY;
-            return new Point2D(OsaX, OsaY);
-        }
+
 
     }
 }
