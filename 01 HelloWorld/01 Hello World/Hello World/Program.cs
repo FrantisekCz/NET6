@@ -18,10 +18,10 @@ namespace Hello_World
             var numbers = new[] { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
             var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
-            foreach (var cislo in numbers)
-            {
-                Console.WriteLine(strings[cislo]);
-            }
+            /// vypis cisla jako slova
+            var vysledek = numbers.Select( n => strings[n]);
+            Console.WriteLine(String.Join(", ", vysledek));
+
 
         }
 
