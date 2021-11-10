@@ -13,8 +13,15 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
-            var p1 = new Point2D(8, 12);
+            var p1 = new Point2D( 2, 4);
             Console.WriteLine(p1.ToString());
+            
+            var p2 = new Point2D( 3, 7);
+            Console.WriteLine(p2.ToString());
+
+            var pSoucet = Point2D.VratPointSoucetBodu(p1, p2);
+            Console.WriteLine(pSoucet.ToString());
+
         }
 
 

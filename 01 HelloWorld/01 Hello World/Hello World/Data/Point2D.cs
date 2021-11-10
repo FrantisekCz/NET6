@@ -8,8 +8,8 @@ namespace Hello_World.Data
 {
     class Point2D
     {
-        int iBodX;
-        int iBodY;
+        public int iBodX { get; }
+        public int iBodY { get; }
 
         public Point2D( int bodX, int bodY)
         {
@@ -17,12 +17,19 @@ namespace Hello_World.Data
             this.iBodY = bodY;
         }
 
-
-        
+       
 
         public override string ToString()
         {
             return $"Obsah čtyřúhelníku je { (Math.Abs(iBodX) * Math.Abs(iBodY))}.";
+        }
+
+
+        public static Point2D VratPointSoucetBodu( Point2D Bod1, Point2D Bod2)
+        {
+            int OsaX = Bod1.iBodX + Bod2.iBodX;
+            int OsaY = Bod1.iBodY + Bod2.iBodY;
+            return new Point2D(OsaX, OsaY);
         }
 
     }
