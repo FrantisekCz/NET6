@@ -30,6 +30,10 @@ namespace Hello_World
             var vysledek3 = strings.Select(s => ($"{s} {s.ToUpper()}"));
             Console.WriteLine(String.Join(", ", vysledek3));
 
+            /// pomoci selectu vytvorit nove pole obsahujici dvojici lower/upper variantu
+            var vysledek4 = strings.Select(s => ($"{s.ToLower()} {s.ToUpper()}"));
+            Console.WriteLine(String.Join(", ", vysledek3));
+
 
         }
 
