@@ -22,6 +22,10 @@ namespace Hello_World
             var vysledek = numbers.Select( n => strings[n]);
             Console.WriteLine(String.Join(", ", vysledek));
 
+            /// pomoci select vse upperCase
+            var vysledek2 = strings.Select( s => s.ToUpper() );
+            Console.WriteLine(String.Join(", ", vysledek2));
+
 
         }
 
