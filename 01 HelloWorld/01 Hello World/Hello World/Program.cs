@@ -34,8 +34,19 @@ namespace Hello_World
             var vysledek4 = strings.Select(s => ($"{s.ToLower()} {s.ToUpper()}"));
             Console.WriteLine(String.Join(", ", vysledek3));
 
-
         }
+
+
+
+
+
+
+
+        static void PrintJoinEnum<T> (IEnumerable<T> items)
+        {
+            Console.WriteLine(String.Join(", ", items));
+        }
+
 
         private static void LINQUkoly(int[] numbers)
         {
