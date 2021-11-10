@@ -6,4 +6,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Hello World\Hello World.csproj" />
+  </ItemGroup>
+
 </Project>

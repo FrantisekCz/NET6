@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hello_World.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,17 @@ namespace WpfApp1
     /// </summary>
     public partial class PersonDetail : Window
     {
-        public PersonDetail()
+        Person osoba;
+
+
+        public PersonDetail( Person _osoba)
         {
             InitializeComponent();
+            osoba = _osoba;
+
+            txtFirstName.Text = osoba.KrestniJmeno;
+
+
         }
     }
 }

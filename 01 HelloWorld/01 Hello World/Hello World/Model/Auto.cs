@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hello_World.Model
 {
-    class Auto
+    public class Auto
     {
         public string RegistracniZnacka { set;  get; }
         public string Barva { set; get; }

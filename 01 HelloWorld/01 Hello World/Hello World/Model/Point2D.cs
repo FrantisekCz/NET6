@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hello_World.Model
 {
-    class Point2D
+    public class Point2D
     {
         public int iBodX { get; set; }
         public int iBodY { get; set; }

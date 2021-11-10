@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Detail osoby" Height="500" Width="400">
     <StackPanel>
-        <Label FontSize="24">Jméno</Label>
-        <TextBox x:Name="txtFirstName" FontSize="24"></TextBox>
-        <Label FontSize="24">Příjmení</Label>
-        <TextBox x:Name="txtLastName" FontSize="24"></TextBox>
-        <Label FontSize="24">Datum narození</Label>
-        <TextBox x:Name="txtBirthDate" FontSize="24"></TextBox>
+        <Label FontSize="24" FontWeight="Normal">Jméno</Label>
+        <TextBox x:Name="txtFirstName" FontSize="24" FontWeight="Bold"></TextBox>
+        <Label FontSize="24" FontWeight="Normal">Příjmení</Label>
+        <TextBox x:Name="txtLastName" FontSize="24" FontWeight="Bold"></TextBox>
+        <Label FontSize="24" FontWeight="Normal">Datum narození</Label>
+        <TextBox x:Name="txtBirthDate" FontSize="24" FontWeight="Bold"></TextBox>
         
 
 

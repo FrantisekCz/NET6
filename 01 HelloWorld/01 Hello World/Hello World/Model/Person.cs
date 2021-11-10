@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hello_World.Model
 {
-    class Person
+    public class Person
     {
         // konstruktory
         public Person(string sJmeno, string sPrijmeni, string sDatumNarozeni)

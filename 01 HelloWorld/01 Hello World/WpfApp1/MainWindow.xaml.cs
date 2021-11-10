@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hello_World.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -54,8 +55,12 @@ namespace WpfApp1
 
         private void btnOpenPersonDetail_Click(object sender, RoutedEventArgs e)
         {
+            // vytvorime osobu
+            var o1 = new Person();
+            o1.KrestniJmeno = "Rozárka";
             // vytvorime novou instanci okna
-            var pdWindow = new PersonDetail();
+            var pdWindow = new PersonDetail( o1 );
+
             pdWindow.Show();
         }
     }

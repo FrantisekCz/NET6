@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hello_World.Model
 {
-    class Address
+    public class Address
     {
         public Address(string sMesto, string sUlice)
         {
