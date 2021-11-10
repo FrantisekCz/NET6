@@ -14,6 +14,33 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
+            int[] numbers = { -2079, -498, 2920, -1856, 332, -2549, -674, -120, -992, 2782, 320, -524, 135, 952, 1868, 2509, -230, -138, -904, -480 };
+            /// 1. počet prvků v poli
+            /// 2. největší hodnotu
+            /// 3. nejmenší hodnotu
+            /// 4. průměr
+            /// 5. kolik obsahuje pole kladných čísel
+            /// 6. kolik obsahuje pole záporných čísel
+            /// 7. sumu všech hodnot
+            /// 8. sumu kladných hodnot
+
+            Console.WriteLine($"Počet prvků: {numbers.Count()}");
+            Console.WriteLine($"Největší hodnota: {numbers.Max()}");
+            Console.WriteLine($"Nejmenší hodnota: {numbers.Min()}");
+            Console.WriteLine($"Průměr hodnot: {numbers.Average()}");
+
+            Console.WriteLine($"Počet kladných prvků: {numbers.Where(cislo => cislo >= 0).Count()}");
+            Console.WriteLine($"Počet záporných prvků: {numbers.Where(cislo => cislo < 0).Count()}");
+            Console.WriteLine($"Suma všech hodnot: {numbers.Sum()}");
+            Console.WriteLine($"Suma kladných prvků: {numbers.Where(cislo => cislo >= 0).Sum()}");
+
+
+        }
+
+
+
+        public static void PrvniHratkysLINQem()
+        {
             int[] aCisla = { 1, 2, -30, 4, 20, 256, -45, 99 };
 
             // where - filtruje v kolekci a vytváří novou kolekci
@@ -66,11 +93,7 @@ namespace Hello_World
             Console.WriteLine($"První: {iPrvni}");
             var iPosledni = aCisla.Last();
             Console.WriteLine($"Poslední: {iPosledni}");
-
-
-
         }
-
 
 
         public static void Day03() {
