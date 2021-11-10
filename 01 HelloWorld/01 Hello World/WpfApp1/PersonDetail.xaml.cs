@@ -29,8 +29,20 @@ namespace WpfApp1
             osoba = _osoba;
 
             txtFirstName.Text = osoba.KrestniJmeno;
+            txtLastName.Text = osoba.Prijmeni;
+            txtBirthDate.Text = osoba.DatumNarozeni.ToShortDateString();
 
 
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            // ulozime data z formu do objektu
+            osoba.KrestniJmeno = txtFirstName.Text;
+            osoba.Prijmeni = txtLastName.Text;
+            osoba.DatumNarozeni = DateTime.Parse(txtBirthDate.Text);
+            
+            // z objektu do dat
         }
     }
 }

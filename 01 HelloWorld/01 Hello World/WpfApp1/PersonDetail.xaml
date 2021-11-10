@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Detail osoby" Height="500" Width="400">
+        Title="Detail osoby" Width="400">
     <StackPanel>
-        <Label FontSize="24" FontWeight="Normal">Jméno</Label>
-        <TextBox x:Name="txtFirstName" FontSize="24" FontWeight="Bold"></TextBox>
-        <Label FontSize="24" FontWeight="Normal">Příjmení</Label>
-        <TextBox x:Name="txtLastName" FontSize="24" FontWeight="Bold"></TextBox>
-        <Label FontSize="24" FontWeight="Normal">Datum narození</Label>
-        <TextBox x:Name="txtBirthDate" FontSize="24" FontWeight="Bold"></TextBox>
-        
+        <Label FontSize="24" FontWeight="Normal" Margin="30,30,30,0">Jméno</Label>
+        <TextBox x:Name="txtFirstName" FontSize="24" FontWeight="Bold" Margin="30,0,30,20"></TextBox>
+        <Label FontSize="24" FontWeight="Normal" Margin="30,0,30,0">Příjmení</Label>
+        <TextBox x:Name="txtLastName" FontSize="24" FontWeight="Bold" Margin="30,0,30,20"></TextBox>
+        <Label FontSize="24" FontWeight="Normal" Margin="30,0,30,0">Datum narození</Label>
+        <TextBox x:Name="txtBirthDate" FontSize="24" FontWeight="Bold" Margin="30,0,30,20"></TextBox>
+        <Button x:Name="btnSave" Content="Uložit změny" Height="52" FontSize="24" Margin="30,10,30,30" Click="btnSave_Click"/>
+
 
 
     </StackPanel>
