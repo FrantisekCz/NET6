@@ -13,6 +13,8 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
+            var p1 = new Point2D(8, 12);
+            Console.WriteLine(p1.ToString());
         }
 
 
