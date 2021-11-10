@@ -14,7 +14,25 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
-            int[] numbers = { -2079, -498, 2920, -1856, 332, -2549, -674, -120, -992, 2782, 320, -524, 135, 952, 1868, 2509, -230, -138, -904, -480 };
+
+            var numbers = new[] { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            var strings = new[] { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+            foreach (var cislo in numbers)
+            {
+                Console.WriteLine(strings[cislo]);
+            }
+
+        }
+
+        private static void LINQUkoly(int[] numbers)
+        {
+//            int[] numbers = { -2079, -498, 2920, -1856, 332, -2549, -674, -120, -992, 2782, 320, -524, 135, 952, 1868, 2509, -230, -138, -904, -480 };
+
+
+            // select - transformace
+            var vysledek = numbers.Select(cislo => cislo + 10);
+            Console.WriteLine($"Navýšeno o 10: {String.Join(", ", vysledek)}");
 
             Console.WriteLine($"Počet prvků: {numbers.Count()}");
             Console.WriteLine($"Největší hodnota: {numbers.Max()}");
@@ -27,12 +45,21 @@ namespace Hello_World
             Console.WriteLine($"Suma kladných hodnot: {numbers.Where(cislo => cislo >= 0).Sum()}");
 
             // seradit, preskocit 3, suma
-            Console.WriteLine($"Suma seřazených hodnot od 4. dále: {numbers.OrderBy( i => i ).Skip(3).Sum()}.");
+            Console.WriteLine($"Suma seřazených hodnot od 4. dále: {numbers.OrderBy(i => i).Skip(3).Sum()}.");
 
+            // seradit sestupne dle ABS, vypsat první 3
+            //var hodnoty = numbers.OrderByDescending(i => Math.Abs(i)).Take(3);
+//            Console.WriteLine($"První 3 hodnoty seřazené sestupně dle ABS: {String.Join(", ", hodnoty)}");
+
+            // seradit sestupne dle ABS, vypsat první 3 v abs. hodnotach
+            // var hodnoty = numbers.OrderByDescending(i => Math.Abs(i)).Take(3).Select( i => Math.Abs(i));  // takto by to zbytecne transformovalo 2x
+            var hodnoty = numbers
+                                .Select(i => Math.Abs(i))
+                                .OrderByDescending(i => i)
+                                .Take(3);
+            Console.WriteLine($"První 3 hodnoty seřazené sestupně dle ABS: {String.Join(", ", hodnoty)}");
 
         }
-
-
 
         public static void PrvniHratkysLINQem()
         {
