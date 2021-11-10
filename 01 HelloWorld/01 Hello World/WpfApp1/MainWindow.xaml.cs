@@ -51,5 +51,12 @@ namespace WpfApp1
             }
 
         }
+
+        private void btnOpenPersonDetail_Click(object sender, RoutedEventArgs e)
+        {
+            // vytvorime novou instanci okna
+            var pdWindow = new PersonDetail();
+            pdWindow.Show();
+        }
     }
 }

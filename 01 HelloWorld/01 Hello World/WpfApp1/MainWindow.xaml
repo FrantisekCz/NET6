@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="První skvělá aplikace v C#" Height="450" Width="800" Background="#FFE8DD39">
+        Title="První skvělá aplikace v C#" Height="567" Width="800" Background="#FFE8DD39">
     <Grid Margin="0,0,0,-16">
-        <Grid Margin="10,10,-10,-10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="359*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="10,10,-10,-10" Grid.ColumnSpan="2">
             <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="220,10,0,0" Text="Schválně, klikni na tlačítko!" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Height="127" Width="551"/>
-            <ListView x:Name="lsvSeznam" Margin="613,137,68,106">
+            <ListView x:Name="lsvSeznam" Margin="652,19,29,355">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
@@ -18,9 +22,10 @@
             </ListView>
             <TextBox x:Name="txtVstupni" HorizontalAlignment="Left" Margin="10,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
             <Label Content="Zadej mi hodnotu:" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnOpenPersonDetail" Content="Detail osoby" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" Height="135" Width="331" FontSize="36" Padding="10,5,10,10" Click="btnOpenPersonDetail_Click"/>
         </Grid>
 
-        <Button x:Name="btnKlikni" Content="Toto je tlačítko!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="144" Width="204" FontSize="20" Click="Button_Click"/>
+        <Button x:Name="btnKlikni" Content="Toto je tlačítko!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="144" Width="204" FontSize="20" Click="Button_Click" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
