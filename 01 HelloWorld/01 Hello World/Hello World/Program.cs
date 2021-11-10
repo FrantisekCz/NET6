@@ -13,6 +13,7 @@ namespace Hello_World
         static void Main(string[] args)
         {
 
+            /*
             var p1 = new Point2D( 2, 4);
             Console.WriteLine($"Definice bodu A: {p1}"); ; ;
             
@@ -30,9 +31,16 @@ namespace Hello_World
 
             p1.PrictiBod(p2);
             Console.WriteLine($"Modifikace prvního bodu: {p1}");
+            */
 
+
+            Console.WriteLine(DateOperations.VratNazevDneDleCisla(3));
 
         }
+
+
+
+
 
     } // class
 
