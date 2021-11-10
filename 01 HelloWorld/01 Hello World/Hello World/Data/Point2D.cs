@@ -18,10 +18,15 @@ namespace Hello_World.Data
         }
 
        
+        int VratPlochu()
+        {
+            return (Math.Abs(iBodX) * Math.Abs(iBodY));
+        }
+
 
         public override string ToString()
         {
-            return $"Obsah čtyřúhelníku je { (Math.Abs(iBodX) * Math.Abs(iBodY))}.";
+            return $"Body [{this.iBodX},{this.iBodY}], obsah je {this.VratPlochu()}.";
         }
 
 
