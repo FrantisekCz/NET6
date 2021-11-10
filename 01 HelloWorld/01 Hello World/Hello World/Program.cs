@@ -20,14 +20,54 @@ namespace Hello_World
             //- AND pomocí &&
             // var eVycet = aCisla.Where(iCislo => ( (iCislo >= 0) && (iCislo <= 100)));
             //- AND více podmínek, následný filtr; následné opakované volání
+            /*
             var eVycet = aCisla
                             .Where(iCislo => (iCislo >= 0))
                             .Where(iCislo => (iCislo <= 100));
+            */
 
-            foreach ( var hodnota in eVycet)
-            {
-                Console.WriteLine(hodnota);
-            }
+            // ŘAZENÍ
+            //             var eVycet = aCisla.OrderBy( i => i );   // radit podle cisla
+
+
+            // take - vezmi prvních X
+            //            var eVycet = aCisla.Take(5);
+
+            // skip - přeskoč prvních X a pak pokračuj
+            //            var eVycet = aCisla.Skip(5);
+
+            // skipwhile - přeskakuj, dokud není splněna podmínka
+            //            var eVycet = aCisla.SkipWhile( i => i > 0 );  // vrací od -30 dál
+
+            // takewhile - pouzij, dokud je splněna podmínka
+            //            var eVycet = aCisla.TakeWhile(i => i > 0);  // vrací vše před -30
+            /*
+                        foreach (var hodnota in eVycet)
+                        {
+                            Console.WriteLine(hodnota);
+                        }
+            */
+
+
+            // AGREGACE; max, min, sum, average
+            var iSuma = aCisla.Sum();
+            Console.WriteLine($"Suma: {iSuma}");
+
+            var iMax = aCisla.Max();
+            Console.WriteLine($"Max: {iMax}");
+
+            var dPrumer = aCisla.Average();
+            Console.WriteLine($"Avg: {dPrumer}");
+
+
+
+            // JEDEN PRVEK Z KOLEKCE
+            var iPrvni = aCisla.First();
+            Console.WriteLine($"První: {iPrvni}");
+            var iPosledni = aCisla.Last();
+            Console.WriteLine($"Poslední: {iPosledni}");
+
+
 
         }
 
