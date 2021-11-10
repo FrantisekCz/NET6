@@ -9,10 +9,10 @@ namespace Hello_World.Data
 {
     class PointMath
     {
-        public static Point2D VratPointSoucetBodu(Point2D Bod1, Point2D Bod2)
+        public static Point2D VratPointSoucetBodu(Point2D bod1, Point2D bod2)
         {
-            int OsaX = Bod1.iBodX + Bod2.iBodX;
-            int OsaY = Bod1.iBodY + Bod2.iBodY;
+            int OsaX = bod1.iBodX + bod2.iBodX;
+            int OsaY = bod1.iBodY + bod2.iBodY;
             return new Point2D(OsaX, OsaY);
         }
     }
