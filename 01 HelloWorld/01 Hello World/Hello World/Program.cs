@@ -39,6 +39,8 @@ namespace Hello_World
             Console.WriteLine(DateOperations.VratNazevDneDleCislaArray(3));
             Console.WriteLine(DateOperations.VratNazevDneDleCislaList(3));
 
+            Console.WriteLine(DateOperations.VratCisloDneDleNazvu("ČtvrtEk"));
+
         }
 
 

@@ -116,7 +116,10 @@ namespace Hello_World.Data
             // zkusim vratit hodnotu
             try
             {
-                return lDny[iCislo - 1];
+                return lDny.ElementAt(iCislo-1);
+                // lze i takto a chyba nevznikne
+                // return lDny.ElementAtOrDefault(iCislo);
+
             }
             catch
             {
@@ -142,6 +145,31 @@ namespace Hello_World.Data
                     throw new Exception("Číslo dne musí být v rozsahu 1-7!");
             }
 
+        }
+
+
+
+        public static int VratCisloDneDleNazvu( string sNazevDne)
+        {
+            switch( sNazevDne.ToLower())
+            {
+                case "pondělí":
+                    return 1;
+                case "úterý":
+                    return 2;
+                case "středa":
+                    return 3;
+                case "čtvrtek":
+                    return 4;
+                case "pátek":
+                    return 5;
+                case "sobota":
+                    return 6;
+                case "neděle":
+                    return 7;
+                default:
+                    return 0;
+            }
         }
 
 
