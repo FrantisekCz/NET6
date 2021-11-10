@@ -34,7 +34,10 @@ namespace Hello_World
             */
 
 
-            Console.WriteLine(DateOperations.VratNazevDneDleCisla(3));
+            Console.WriteLine(DateOperations.VratNazevDneDleCislaSwitch(3));
+            Console.WriteLine(DateOperations.VratNazevDneDleCislaIfElse(3));
+            Console.WriteLine(DateOperations.VratNazevDneDleCislaArray(3));
+            Console.WriteLine(DateOperations.VratNazevDneDleCislaList(3));
 
         }
 
