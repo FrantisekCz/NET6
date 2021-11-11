@@ -56,10 +56,11 @@ namespace WpfApp1
 
         private void btnOpenPersonDetail_Click(object sender, RoutedEventArgs e)
         {
-            // vytvorime osobu
-            var o1 = new Person("Evelína","Vomáčková","29.8.1979");
+            // nactu z gridu
+            var osoba = (Person)grdPeople.SelectedItem;
+
             // vytvorime novou instanci okna
-            var pdWindow = new PersonDetail( o1 );
+            var pdWindow = new PersonDetail(osoba);
 
             pdWindow.Show();
         }
