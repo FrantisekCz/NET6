@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Detail osoby" Width="400">
     <StackPanel>
-        <Label FontSize="24" FontWeight="Normal" Margin="30,30,30,0">Jméno</Label>
+        <Label FontSize="24" FontWeight="Normal" Margin="30,10,30,0">Jméno</Label>
         <TextBox x:Name="txtFirstName" FontSize="24" FontWeight="Bold" Margin="30,0,30,20"></TextBox>
         <Label FontSize="24" FontWeight="Normal" Margin="30,0,30,0">Příjmení</Label>
         <TextBox x:Name="txtLastName" FontSize="24" FontWeight="Bold" Margin="30,0,30,20"></TextBox>

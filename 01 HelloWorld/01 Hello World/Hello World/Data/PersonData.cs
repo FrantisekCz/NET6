@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Hello_World.Data
 {
-    class PersonData
+    public class PersonData
     {
         // bez get;set; je to "field"
         // KONSTANTA
@@ -35,12 +35,13 @@ namespace Hello_World.Data
 
 
         // nacteni seznamu osob - KOLEKCE
-        public static List<Person> LoadPeople()
+        public static List<Person> LoadPeople(string sFile = "people.txt")
+//        public static List<Person> LoadPeople(string sFile = personDataFile)
         {
             // seznam lidi; seznam polozek typu Person
             var seznamLidi = new List<Person>();
             // data ze souboru; pole stringu
-            var radkySouboru = File.ReadAllLines(personDataFile);
+            var radkySouboru = File.ReadAllLines(sFile);
             // prochazim pole s nactenymi texty
             foreach( var jedenRadek in radkySouboru )
             {

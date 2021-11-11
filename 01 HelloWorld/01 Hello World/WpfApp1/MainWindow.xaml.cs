@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Hello_World.Data;
 
 namespace WpfApp1
 {
@@ -61,6 +62,16 @@ namespace WpfApp1
             var pdWindow = new PersonDetail( o1 );
 
             pdWindow.Show();
+        }
+
+        private void wMain_Loaded(object sender, RoutedEventArgs e)
+        {
+            string sAdresar = @"C:\Users\Student\Desktop\2021-11 Školení C#\CNET1\01 HelloWorld\01 Hello World\Hello World\Data";
+            string sSoubor = "ZapsaniLide.txt";
+            var sCestaSouboru = System.IO.Path.Combine( sAdresar, sSoubor);
+            var people = PersonData.LoadPeople(sCestaSouboru);
+
+            grdPeople.ItemsSource = people;
         }
     }
 }

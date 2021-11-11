@@ -5,27 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="První skvělá aplikace v C#" Height="567" Width="800" Background="#FFE8DD39">
+        Title="První skvělá aplikace v C#" Height="567" Width="800" Background="#FFE8DD39" Loaded="wMain_Loaded">
     <Grid Margin="0,0,0,-16">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="41*"/>
             <ColumnDefinition Width="359*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="10,10,-10,-10" Grid.ColumnSpan="2">
-            <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="220,10,0,0" Text="Schválně, klikni na tlačítko!" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Height="127" Width="551"/>
-            <ListView x:Name="lsvSeznam" Margin="652,19,29,355">
+        <Grid Margin="10,10,0,10" Grid.ColumnSpan="2">
+            <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="197,0,0,0" Text="Schválně, klikni na tlačítko!" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="315"/>
+            <ListView x:Name="lsvSeznam" Margin="383,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="129">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <TextBox x:Name="txtVstupni" HorizontalAlignment="Left" Margin="10,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
-            <Label Content="Zadej mi hodnotu:" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnOpenPersonDetail" Content="Detail osoby" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top" Height="135" Width="331" FontSize="36" Padding="10,5,10,10" Click="btnOpenPersonDetail_Click"/>
+            <TextBox x:Name="txtVstupni" HorizontalAlignment="Left" Margin="220,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+            <Label Content="Seznam osob:" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="16"/>
+            <Button x:Name="btnOpenPersonDetail" Content="Detail osoby" HorizontalAlignment="Left" Margin="550,137,0,0" VerticalAlignment="Top" Height="35" Width="230" FontSize="18" Padding="5,3,5,5" Click="btnOpenPersonDetail_Click"/>
+            <DataGrid x:Name="grdPeople" VerticalAlignment="Top" Height="339" Margin="10,179,10,0"/>
         </Grid>
 
-        <Button x:Name="btnKlikni" Content="Toto je tlačítko!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="144" Width="204" FontSize="20" Click="Button_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnKlikni" Content="Toto je tlačítko!" HorizontalAlignment="Left" Margin="19,22,0,0" VerticalAlignment="Top" Height="39" Width="186" FontSize="20" Click="Button_Click" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
