@@ -17,6 +17,12 @@ namespace Hello_World.Model
         {
         }
 
+        public override string ToString()
+        {
+            return $"{this.Ulice}, {this.Mesto}";
+        }
+        public int Id { get; set; }
+
         public string Ulice { get; set; }
         public string Mesto { get; set; }
     }

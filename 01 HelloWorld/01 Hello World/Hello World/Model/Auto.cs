@@ -8,6 +8,7 @@ namespace Hello_World.Model
 {
     public class Auto
     {
+        public int Id { get; set; }
         public string RegistracniZnacka { set;  get; }
         public string Barva { set; get; }
         public double NajeteKilometry { set; get; }

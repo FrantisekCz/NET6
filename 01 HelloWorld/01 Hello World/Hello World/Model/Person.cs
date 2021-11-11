@@ -38,6 +38,7 @@ namespace Hello_World.Model
 
 
         // definice vlastností
+        public int Id { get; set; }
         public string KrestniJmeno { get; set; }
         public string Prijmeni { get; set; }
 

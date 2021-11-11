@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Hello_World.Data;
+using WpfApp1.Data;
 
 namespace WpfApp1
 {
@@ -62,17 +63,39 @@ namespace WpfApp1
             // vytvorime novou instanci okna
             var pdWindow = new PersonDetail(osoba);
 
-            pdWindow.Show();
+            pdWindow.ShowDialog();
         }
 
         private void wMain_Loaded(object sender, RoutedEventArgs e)
         {
-            string sAdresar = @"C:\Users\Student\Desktop\2021-11 Školení C#\CNET1\01 HelloWorld\01 Hello World\Hello World\Data";
-            string sSoubor = "ZapsaniLide.txt";
-            var sCestaSouboru = System.IO.Path.Combine( sAdresar, sSoubor);
-            var people = PersonData.LoadPeople(sCestaSouboru);
+            // jen jednorazove
+//            NacistUvodniData();
 
             grdPeople.ItemsSource = people;
+        }
+
+
+        private void NacistUvodniData()
+        {
+            using (var db = new PeopleContext())
+            {
+                string sAdresar = @"C:\Users\Student\Desktop\2021-11 Školení C#\CNET1\01 HelloWorld\01 Hello World\Hello World\Data";
+                string sSoubor = "ZapsaniLide.txt";
+                var sCestaSouboru = System.IO.Path.Combine(sAdresar, sSoubor);
+                var people = PersonData.LoadPeople(sCestaSouboru);
+                // pridelime do DB contextu v pameti
+                db.People.AddRange(people);
+                // vlozime data do DB
+                db.SaveChanges();
+            }
+        }
+
+
+
+
+        private void grdPeople_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            btnOpenPersonDetail_Click(sender, e);
         }
     }
 }

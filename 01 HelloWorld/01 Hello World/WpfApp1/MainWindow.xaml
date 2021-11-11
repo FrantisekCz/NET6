@@ -11,7 +11,7 @@
             <ColumnDefinition Width="41*"/>
             <ColumnDefinition Width="359*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="10,10,0,10" Grid.ColumnSpan="2">
+        <Grid Margin="0,0,0,0" Grid.ColumnSpan="2">
             <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="197,0,0,0" Text="Schválně, klikni na tlačítko!" TextWrapping="Wrap" VerticalAlignment="Top" Height="38" Width="315"/>
             <ListView x:Name="lsvSeznam" Margin="383,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="69" Width="129">
                 <ListView.View>
@@ -23,7 +23,7 @@
             <TextBox x:Name="txtVstupni" HorizontalAlignment="Left" Margin="220,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
             <Label Content="Seznam osob:" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="16"/>
             <Button x:Name="btnOpenPersonDetail" Content="Detail osoby" HorizontalAlignment="Left" Margin="550,137,0,0" VerticalAlignment="Top" Height="35" Width="230" FontSize="18" Padding="5,3,5,5" Click="btnOpenPersonDetail_Click"/>
-            <DataGrid x:Name="grdPeople" VerticalAlignment="Top" Height="339" Margin="10,179,10,0"/>
+            <DataGrid x:Name="grdPeople" VerticalAlignment="Top" Height="339" Margin="10,179,10,0" MouseDoubleClick="grdPeople_MouseDoubleClick"/>
         </Grid>
 
         <Button x:Name="btnKlikni" Content="Toto je tlačítko!" HorizontalAlignment="Left" Margin="19,22,0,0" VerticalAlignment="Top" Height="39" Width="186" FontSize="20" Click="Button_Click" Grid.ColumnSpan="2"/>
