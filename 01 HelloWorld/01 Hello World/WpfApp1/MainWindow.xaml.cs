@@ -61,7 +61,7 @@ namespace WpfApp1
             var osoba = (Person)grdPeople.SelectedItem;
 
             // vytvorime novou instanci okna
-            var pdWindow = new PersonDetail(osoba);
+            var pdWindow = new PersonDetail(osoba, this);
 
             pdWindow.ShowDialog();
         }
@@ -69,9 +69,10 @@ namespace WpfApp1
         private void wMain_Loaded(object sender, RoutedEventArgs e)
         {
             // jen jednorazove
-//            NacistUvodniData();
+            //            NacistUvodniData();
 
-            grdPeople.ItemsSource = people;
+            DataAccess.LoadPeopleFromDb();
+            grdPeople.ItemsSource = DataAccess.people;
         }
 
 

@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.Data;
 
 namespace WpfApp1
 {
@@ -22,12 +23,15 @@ namespace WpfApp1
     public partial class PersonDetail : Window
     {
         Person osoba;
+        MainWindow mainWindow; // zde bude odkaz na hlavni okno
 
 
-        public PersonDetail( Person _osoba)
+
+        public PersonDetail( Person _osoba, MainWindow _mainWindow)  // osoba a odkaz na puvodni okno
         {
             InitializeComponent();
             osoba = _osoba;
+            mainWindow = _mainWindow;
 
             txtFirstName.Text = osoba.KrestniJmeno;
             txtLastName.Text = osoba.Prijmeni;
@@ -44,7 +48,18 @@ namespace WpfApp1
             osoba.DatumNarozeni = DateTime.Parse(txtBirthDate.Text);
 
             // z objektu do dat
-            File.AppendAllText("osobyWPF.txt", osoba.ToString() + Environment.NewLine);
+            DataAccess.SavePerson(osoba);
+
+            // přenačtu všechna data ze zdroje
+            DataAccess.LoadPeopleFromDb();
+
+            // refresh gridu
+            mainWindow.grdPeople.ItemsSource = DataAccess.people;
+            // zavre okno
+            this.Close();
+
         }
+
+
     }
 }
