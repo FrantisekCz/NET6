@@ -22,8 +22,9 @@
             </ListView>
             <TextBox x:Name="txtVstupni" HorizontalAlignment="Left" Margin="220,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
             <Label Content="Seznam osob:" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top" FontSize="16"/>
-            <Button x:Name="btnOpenPersonDetail" Content="Detail osoby" HorizontalAlignment="Left" Margin="550,137,0,0" VerticalAlignment="Top" Height="35" Width="230" FontSize="18" Padding="5,3,5,5" Click="btnOpenPersonDetail_Click"/>
-            <DataGrid x:Name="grdPeople" VerticalAlignment="Top" Height="339" Margin="10,179,10,0" MouseDoubleClick="grdPeople_MouseDoubleClick"/>
+            <Button x:Name="btnOpenPersonDetail" Content="Detail osoby" HorizontalAlignment="Left" Margin="550,137,0,0" VerticalAlignment="Top" Height="35" Width="230" FontSize="18" Padding="5,3,5,5" Click="btnOpenPersonDetail_Click" IsEnabled="False"/>
+            <Button x:Name="btnAddPersonDetail" Content="Přidat osobu" HorizontalAlignment="Left" Margin="287,137,0,0" VerticalAlignment="Top" Height="35" Width="230" FontSize="18" Padding="5,3,5,5" Click="btnAddPersonDetail_Click"/>
+            <DataGrid x:Name="grdPeople" VerticalAlignment="Top" Height="339" Margin="10,179,10,0" SelectionChanged="grdPeople_SelectionChanged"/>
         </Grid>
 
         <Button x:Name="btnKlikni" Content="Toto je tlačítko!" HorizontalAlignment="Left" Margin="19,22,0,0" VerticalAlignment="Top" Height="39" Width="186" FontSize="20" Click="Button_Click" Grid.ColumnSpan="2"/>

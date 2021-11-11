@@ -30,6 +30,7 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (txtVstupni.Text.Trim() == "")
             {
                 txbInfo.Text = "HA, klikl jsi na tlačítko!";
@@ -52,7 +53,7 @@ namespace WpfApp1
                 txtVstupni.Focus();
 
             }
-
+            */
         }
 
         private void btnOpenPersonDetail_Click(object sender, RoutedEventArgs e)
@@ -97,6 +98,21 @@ namespace WpfApp1
         private void grdPeople_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             btnOpenPersonDetail_Click(sender, e);
+        }
+
+
+        private void grdPeople_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnOpenPersonDetail.IsEnabled = true;
+        }
+
+        private void btnAddPersonDetail_Click(object sender, RoutedEventArgs e)
+        {
+            // vytvorime novou instanci okna
+            PersonDetail pdWindow = new PersonDetail( null, this, true );
+
+            pdWindow.ShowDialog();
+
         }
     }
 }

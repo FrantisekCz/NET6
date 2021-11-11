@@ -46,8 +46,24 @@ namespace WpfApp1.Data
                 // ulozim zmenu
                 db.SaveChanges();
 
-                
-             }
+
+            }
         }
+
+
+        public static void AddPerson(Person personToSave)
+        {
+            using (var db = new PeopleContext())
+            {
+                // nejdriv si nacteme spravny zaznam v DB, resp. v contextu
+                var dbperson = db.People.Add(personToSave);
+
+                // ulozim zmenu
+                db.SaveChanges();
+
+
+            }
+        }
+
     }
 }

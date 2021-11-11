@@ -24,14 +24,26 @@ namespace WpfApp1
     {
         Person osoba;
         MainWindow mainWindow; // zde bude odkaz na hlavni okno
+        bool isNewPerson = false;
 
 
-
-        public PersonDetail( Person _osoba, MainWindow _mainWindow)  // osoba a odkaz na puvodni okno
+        public PersonDetail( Person _osoba, MainWindow _mainWindow, bool _isNewPerson = false )  // osoba a odkaz na puvodni okno
         {
             InitializeComponent();
-            osoba = _osoba;
             mainWindow = _mainWindow;
+            isNewPerson = _isNewPerson;
+
+
+            if (isNewPerson)
+            {
+                // vytvorim novou
+                osoba = new Person();
+            }
+            else
+            {
+                // prevezmu z parametru
+                osoba = _osoba;
+            }
 
             txtFirstName.Text = osoba.KrestniJmeno;
             txtLastName.Text = osoba.Prijmeni;
@@ -48,7 +60,16 @@ namespace WpfApp1
             osoba.DatumNarozeni = DateTime.Parse(txtBirthDate.Text);
 
             // z objektu do dat
-            DataAccess.SavePerson(osoba);
+            if( isNewPerson)
+            {
+                // pridani noveho zaznamu
+                DataAccess.AddPerson(osoba);
+            }
+            else
+            {
+                // ulozeni zmeny
+                DataAccess.SavePerson(osoba);
+            }
 
             // přenačtu všechna data ze zdroje
             DataAccess.LoadPeopleFromDb();
